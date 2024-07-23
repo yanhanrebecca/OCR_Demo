@@ -247,4 +247,5 @@ if __name__ == '__main__':
     DOIT(rawPicPath, save_directory)
     print("图片处理完毕")
     image_dir = './result'
+    # w
     ocr(image_dir)
