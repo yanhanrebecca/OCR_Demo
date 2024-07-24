@@ -10,7 +10,7 @@ decorator
 exceptiongroup
 fire
 fonttools
-h11-a
+h11
 httpcore
 httpx
 idna
