@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 import subprocess
+
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 HIOG = 50
 VIOG = 3
@@ -162,12 +163,13 @@ def pad_ocr(file_path, picture_dir, unrecognized_dir):
             if output_lines:
                 last_line = output_lines[-1]
                 word = process_log(last_line)
+                word = word.replace("'", "")  # 去掉单引号
                 print("{}图片是识别出的文字是{}".format(file_path, word))
 
                 with open('out.txt', 'w') as f:
                     f.write(word)
 
-                move_file(file_path, picture_dir)
+                move_file(file_path, picture_dir, word)
             else:
                 print("命令没有输出任何内容。")
                 move_file(file_path, unrecognized_dir)
@@ -181,8 +183,12 @@ def pad_ocr(file_path, picture_dir, unrecognized_dir):
         move_file(file_path, unrecognized_dir)
 
 
-def move_file(file_path, target_dir):
+def move_file(file_path, target_dir, word=None):
     # 如果目标文件已存在，重命名源文件以避免冲突
+    if word:
+        target_dir = os.path.join(target_dir, word)
+        if not os.path.exists(target_dir):
+            os.makedirs(target_dir)
     base_name = os.path.basename(file_path)
     target_path = os.path.join(target_dir, base_name)
     if os.path.exists(target_path):
