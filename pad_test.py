@@ -166,10 +166,20 @@ def pad_ocr(file_path, picture_dir, unrecognized_dir):
                 word = word.replace("'", "")  # 去掉单引号
                 print("{}图片是识别出的文字是{}".format(file_path, word))
 
-                with open('out.txt', 'w') as f:
-                    f.write(word)
+                if word:
+                    word_folder = os.path.join(picture_dir, word)
+                    if not os.path.exists(word_folder):
+                        os.makedirs(word_folder)
 
-                move_file(file_path, picture_dir, word)
+                    # 将识别出的字保存到对应的文件夹中
+                    txt_path = os.path.join(word_folder, f'{word}.txt')
+                    with open(txt_path, 'w') as f:
+                        f.write(word)
+
+                    # 移动原始图片到对应的文件夹中
+                    move_file(file_path, word_folder)
+                else:
+                    move_file(file_path, unrecognized_dir)
             else:
                 print("命令没有输出任何内容。")
                 move_file(file_path, unrecognized_dir)
