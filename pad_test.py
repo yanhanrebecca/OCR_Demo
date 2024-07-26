@@ -77,7 +77,9 @@ def DOIT(rawPic, save_directory):
     origineImage = cv2.imread(rawPic)
     image = cv2.cvtColor(origineImage, cv2.COLOR_BGR2GRAY)
 
-    retval, img = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY_INV)
+    # 使用自适应阈值方法
+    img = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                cv2.THRESH_BINARY_INV, 11, 2)
     (h, w) = img.shape
     V = getVProjection(img)
 
