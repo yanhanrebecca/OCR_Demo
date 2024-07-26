@@ -3,20 +3,23 @@ import cv2
 import numpy as np
 import subprocess
 import os
-
+import argparse
+# 水平投影阈值，用于确定字符或行的水平边界
 HIOG = 50
+# 垂直投影阈值，用于确定字符或列的垂直边界
 VIOG = 3
+# 存储最终识别出的字符或区域的位置信息,每个元素包含四个整数，分别表示字符或区域的左上角和右下角的坐标
 Position = []
 
-'''水平投影'''
-
-
+'''计算二值图像的水平投影'''
 def getHProjection(image):
+    # 创建一个与输入图像image相同形状的空白图像（用零填充），用于可视化水平投影。
     hProjection = np.zeros(image.shape, np.uint8)
     # 获取图像大小
     (h, w) = image.shape
     # 统计像素个数
     h_ = [0] * h
+    #计算水平投影：如果像素为白色（值为255），则在 h_[y] 对应的位置增加计数。
     for y in range(h):
         for x in range(w):
             if image[y, x] == 255:
@@ -27,7 +30,7 @@ def getHProjection(image):
             hProjection[y, x] = 255
     return h_
 
-
+'''计算二值化图像 image 的垂直投影'''
 def getVProjection(image):
     vProjection = np.zeros(image.shape, np.uint8)
     (h, w) = image.shape
@@ -41,16 +44,19 @@ def getVProjection(image):
             vProjection[y, x] = 255
     return w_
 
-
+'''扫描垂直投影 vProjection，并找到投影中连续超过给定阈值 iog 的区间'''
 def scan(vProjection, iog, pos=0):
     start = 0
+    # 存储检测到的起始和结束位置
     V_start = []
     V_end = []
 
     for i in range(len(vProjection)):
+        # 某一列的投影值超过阈值iog且start标志为0时，记录当前位置为起始位置
         if vProjection[i] > iog and start == 0:
             V_start.append(i)
             start = 1
+        # 当投影值小于或等于阈值iog且start标志为1（表示正在记录区间）时，记录当前位置为结束位置
         if vProjection[i] <= iog and start == 1:
             if i - V_start[-1] < pos:
                 continue
@@ -63,18 +69,28 @@ def checkSingle(image):
     h = getHProjection(image)
     start = 0
     end = 0
-
+    #旧的部分
     for i in range(h):
         pass
+    #新添加的部分
+    # threshold = 100
+    # for i in range(len(h)):
+    #     if h[i] > threshold and start == 0:
+    #         start = i
+    #     elif (h[i] <= threshold and start != 0) or (i == len(h) - 1 and start != 0):
+    #         end = i - 1 if h[i] <= threshold else i
+    #         # 对于找到的 start 和 end 进行处理，例如存储、处理等。
+    #         start = 0
+    #         end = 0
 
 
 # 分割
 def CropImage(image, dest, boxMin, boxMax):
-    a = boxMin[1]
-    b = boxMax[1]
-    c = boxMin[0]
-    d = boxMax[0]
-    cropImg = image[a:b, c:d]
+    a = boxMin[1]   # 边界框的上边界
+    b = boxMax[1]   # 边界框的下边界
+    c = boxMin[0]   # 边界框的左边界
+    d = boxMax[0]   # 边界框的右边界
+    cropImg = image[a:b, c:d]   # 根据边界框裁剪图像
     cv2.imwrite(dest, cropImg)
 
 
@@ -85,7 +101,7 @@ def DOIT(rawPic, save_directory):
     # 图像灰度化
     image = cv2.cvtColor(origineImage, cv2.COLOR_BGR2GRAY)
 
-    # 将图片二值化
+    # 将图片二值化 原始阈值127
     retval, img = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY_INV)
     (h, w) = img.shape
     # 垂直投影
@@ -102,7 +118,7 @@ def DOIT(rawPic, save_directory):
 
     # 分割行，分割之后再进行列分割并保存分割位置
     for i in range(len(V_end)):
-        # 获取行图像
+        # 获取行图像 30
         if V_end[i] - V_start[i] < 30:
             continue
 
@@ -139,8 +155,8 @@ def DOIT(rawPic, save_directory):
     # 根据确定的位置分割字符
     number = 0
     for m in range(len(Position)):
-        rectMin = (Position[m][0] - 5, Position[m][1] - 5)
-        rectMax = (Position[m][2] + 5, Position[m][3] + 5)
+        rectMin = (Position[m][0] - 20, Position[m][1] - 20)
+        rectMax = (Position[m][2] + 20, Position[m][3] + 20)
         cv2.rectangle(origineImage, rectMin, rectMax, (0, 0, 255), 2)
         number += 1
         # 保存裁剪后的图像到指定目录
@@ -188,7 +204,7 @@ def ocr(image_dir):
 
 def pad_ocr(file_path):
     command = ['paddleocr', '--image_dir', file_path, '--use_angle_cls', 'true', '--use_gpu', 'false']
-
+    print(f"Executing command: {' '.join(command)}")
     # 执行命令并捕获输出
     result = subprocess.run(command, capture_output=True, text=True)
 
@@ -242,10 +258,19 @@ if __name__ == '__main__':
     if not os.path.exists(save_directory):
         os.makedirs(save_directory)
     # 示例
-    rawPicPath = r"./2.jpg"
+    # rawPicPath = r"./2.jpg"
     print("开始图片处理")
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-img', '--image_path', help='输入图片路径')
+    args = parser.parse_args()
+    # 获得传入的参数
+    # 获取传入的参数值
+    image_path = args.image_path
+    rawPicPath = image_path
     DOIT(rawPicPath, save_directory)
     print("图片处理完毕")
     image_dir = './result'
-    # w
+    print("传入的图片路径是:", image_path)
+    # print(args)
+
     ocr(image_dir)
