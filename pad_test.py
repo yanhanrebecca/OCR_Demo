@@ -5,6 +5,8 @@ import subprocess
 import os
 import argparse
 # 水平投影阈值，用于确定字符或行的水平边界
+
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 HIOG = 50
 # 垂直投影阈值，用于确定字符或列的垂直边界
 VIOG = 3
@@ -72,16 +74,6 @@ def checkSingle(image):
     #旧的部分
     for i in range(h):
         pass
-    #新添加的部分
-    # threshold = 100
-    # for i in range(len(h)):
-    #     if h[i] > threshold and start == 0:
-    #         start = i
-    #     elif (h[i] <= threshold and start != 0) or (i == len(h) - 1 and start != 0):
-    #         end = i - 1 if h[i] <= threshold else i
-    #         # 对于找到的 start 和 end 进行处理，例如存储、处理等。
-    #         start = 0
-    #         end = 0
 
 
 # 分割
@@ -185,8 +177,31 @@ def DOIT(rawPic, save_directory):
 #         # 或者你可以在这里添加其他处理逻辑
 #         # 例如，分析文本、存储到数据库等
 
+
+
+# 执行命令，但不会捕获输出
+# exit_status = os.system('paddleocr --image_dir ./2.jpg --use_angle_cls true --use_gpu false | tee out.txt')
+
+# 注意：这里无法直接获取命令的输出
+
+# # 打开out.txt文件以读取内容
+# with open('out.txt', 'r', encoding='utf-8') as file:
+#     # 逐行读取文件
+#     for line in file:
+#         # 去除每行末尾的换行符（如果有的话）
+#         line = line.rstrip('\n')
+#         # 处理每一行（这里只是打印出来）
+#         print(line)
+#         # 或者你可以在这里添加其他处理逻辑
+#         # 例如，分析文本、存储到数据库等
+
 def ocr(image_dir):
-    # 使用PaddleOCR进行图片中文本的识别
+    picture_dir = os.path.join(image_dir, 'picture')
+    unrecognized_dir = os.path.join(image_dir, 'unrecognized')
+    if not os.path.exists(picture_dir):
+        os.makedirs(picture_dir)
+    if not os.path.exists(unrecognized_dir):
+        os.makedirs(unrecognized_dir)
 
 
     # 获取指定目录下所有文件名
@@ -196,41 +211,75 @@ def ocr(image_dir):
     for file in files:
         # 拼接文件的完整路径
         file_path = os.path.join(image_dir, file)
-        print("-----------------------------------------------------------")
-        print("正在识别：{}".format(file))
-        # 检查文件是否是jpg格式
         if file.lower().endswith('.jpg'):
-            pad_ocr(file_path)
+            print("-----------------------------------------------------------")
+            print("正在识别：{}".format(file))
+            pad_ocr(file_path, picture_dir, unrecognized_dir)
 
-def pad_ocr(file_path):
+
+def pad_ocr(file_path, picture_dir, unrecognized_dir):
     command = ['paddleocr', '--image_dir', file_path, '--use_angle_cls', 'true', '--use_gpu', 'false']
-    print(f"Executing command: {' '.join(command)}")
-    # 执行命令并捕获输出
+
     result = subprocess.run(command, capture_output=True, text=True)
 
     # 检查命令是否成功执行
     if result.returncode == 0:
         print("识别成功。")
-        output_lines = result.stdout.splitlines()
+        output = result.stdout
+        if output is not None:
+            output_lines = output.splitlines()
+            if output_lines:
+                last_line = output_lines[-1]
+                word = process_log(last_line)
+                word = word.replace("'", "")  # 去掉单引号
+                print("{}图片是识别出的文字是{}".format(file_path, word))
 
-        # 打印或处理命令的标准输出的最后一行
-        if output_lines:
-            last_line = output_lines[-1]
-            # print("命令输出的最后一行:")
-            # print(last_line)
-            word = process_log(last_line)
-            print("{}图片是识别出的文字是{}".format(file_path, word))
+                if word:
+                    word_folder = os.path.join(picture_dir, word)
+                    if not os.path.exists(word_folder):
+                        os.makedirs(word_folder)
 
-            # 将最后一行输出到文件中
-            with open('out.txt', 'w') as f:
-                f.write(word)
+                    # 将识别出的字保存到对应的文件夹中
+                    txt_path = os.path.join(word_folder, f'{word}.txt')
+                    with open(txt_path, 'w') as f:
+                        f.write(word)
+
+                    # 移动原始图片到对应的文件夹中
+                    move_file(file_path, word_folder)
+                else:
+                    move_file(file_path, unrecognized_dir)
+            else:
+                print("命令没有输出任何内容。")
+                move_file(file_path, unrecognized_dir)
         else:
-            print("命令没有输出任何内容。")
+            print("标准输出是 None。")
+            move_file(file_path, unrecognized_dir)
     else:
         print("命令执行失败。")
         # 打印或处理命令的错误输出
         print("错误输出:")
         print(result.stderr)
+        move_file(file_path, unrecognized_dir)
+
+
+def move_file(file_path, target_dir, word=None):
+    # 如果目标文件已存在，重命名源文件以避免冲突
+    if word:
+        target_dir = os.path.join(target_dir, word)
+        if not os.path.exists(target_dir):
+            os.makedirs(target_dir)
+    base_name = os.path.basename(file_path)
+    target_path = os.path.join(target_dir, base_name)
+    if os.path.exists(target_path):
+        # 文件已存在，添加一个后缀以避免冲突
+        name, ext = os.path.splitext(base_name)
+        counter = 1
+        while os.path.exists(target_path):
+            new_name = f"{name}_{counter}{ext}"
+            target_path = os.path.join(target_dir, new_name)
+            counter += 1
+    os.rename(file_path, target_path)
+
 
 def process_log(log_string):
     start_index = log_string.find('(')
@@ -242,14 +291,9 @@ def process_log(log_string):
         if end_index != -1:
             # 提取找到的字符
             found_character = content_after_bracket[:end_index].strip()
+            return found_character
+    return ""
 
-            # 输出结果
-    #         print("找到的字符:", found_character)
-    #     else:
-    #         print("未找到逗号，无法提取右边的字符。")
-    # else:
-    #     print("未找到左括号，无法提取右边的字符。")
-    return found_character
 
 if __name__ == '__main__':
     # 设置保存目录为D盘某个路径

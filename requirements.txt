@@ -3,6 +3,7 @@ astor
 beautifulsoup4
 certifi
 charset-normalizer
+colorama
 contourpy
 cycler
 Cython
@@ -23,15 +24,15 @@ lmdb
 lxml
 matplotlib
 networkx
-numpy
+numpy 
 opencv-contrib-python
 opencv-python
+opencv-python-headless
 opt-einsum
 packaging
 paddleocr
 paddlepaddle
 pillow
-pip
 protobuf
 pyclipper
 pyparsing
@@ -43,7 +44,6 @@ rapidfuzz
 requests
 scikit-image
 scipy
-setuptools
 shapely
 six
 sniffio
@@ -53,5 +53,4 @@ tifffile
 tqdm
 typing_extensions
 urllib3
-wheel
 zipp
