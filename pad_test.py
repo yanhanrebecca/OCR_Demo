@@ -170,7 +170,7 @@ def DOIT(rawPic, save_directory):
     for m in range(len(Position)):
         rectMin = (Position[m][0], Position[m][1])
         rectMax = (Position[m][2], Position[m][3])
-        sizes = [(0, 0), (10, 10), (25, 25)]  # 定义三种不同的尺寸
+        sizes = [(0, 0), (50, 50), (100, 100)]  # 定义三种不同的尺寸
 
         for size in sizes:
             # 调整裁剪区域以确保不引入黑色边框
@@ -285,6 +285,7 @@ def pad_ocr(file_path, picture_dir, unrecognized_dir):      #file_path：待处�
         print("错误输出:")
         print(result.stderr)
         move_file(file_path, unrecognized_dir)
+
 
 #将文件移动到指定的目标目录
 def move_file(file_path, target_dir, word=None):
