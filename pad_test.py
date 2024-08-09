@@ -10,7 +10,7 @@ from PIL import Image as PILImage
 # 初始化参数
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'     # 环境变量设置：设置 KMP_DUPLICATE_LIB_OK 可以避免程序因库冲突而崩溃
 HIOG = 5 # 水平投影的阈值 30 3；5 8；
-VIOG = 8   # 垂直投影的阈值
+VIOG = 5   # 垂直投影的阈值
 Position = []
 
 '''计算二值图像的水平投影'''
@@ -168,93 +168,24 @@ def DOIT(rawPic, save_directory):
     # 根据确定的位置分割字符
     number = 0
     for m in range(len(Position)):
-        rectMin = (Position[m][0] - 20, Position[m][1] - 20)
-        rectMax = (Position[m][2] + 20, Position[m][3] + 20)
-        cv2.rectangle(origineImage, rectMin, rectMax, (0, 0, 255), 2)
-        number += 1
-        # 保存裁剪后的图像到指定目录
-        crop_path = os.path.join(save_directory, f'{number}.jpg')
-        CropImage(origineImage, crop_path, rectMin, rectMax)
+        rectMin = (Position[m][0], Position[m][1])
+        rectMax = (Position[m][2], Position[m][3])
+        sizes = [(0, 0), (10, 10), (25, 25)]  # 定义三种不同的尺寸
 
+        for size in sizes:
+            # 调整裁剪区域以确保不引入黑色边框
+            newRectMin = (rectMin[0] - size[0], rectMin[1] - size[1])
+            newRectMax = (rectMax[0] + size[0], rectMax[1] + size[1])
+
+            # 保存裁剪后的图像到指定目录
+            crop_path = os.path.join(save_directory, f'{number}.jpg')
+            CropImage(origineImage, crop_path, newRectMin, newRectMax)
+            number += 1
 
     result_image_path = os.path.join(save_directory, 'ResultImage.jpg')
     cv2.imwrite(result_image_path, origineImage)
 
-# 处理与图像目录相关的操作
-# def ocr(image_dir):
-#     # 创建两个子目录 picture 和 unrecognized
-#     picture_dir = os.path.join(image_dir, 'picture')
-#     unrecognized_dir = os.path.join(image_dir, 'unrecognized')
-#     if not os.path.exists(picture_dir):
-#         os.makedirs(picture_dir)
-#     if not os.path.exists(unrecognized_dir):
-#         os.makedirs(unrecognized_dir)
-#
-#
-#     # # 获取指定目录下所有文件名 导入python-docx包之前的代码
-#     # files = os.listdir(image_dir)
-#     #
-#     # # 遍历每个文件
-#     # for file in files:
-#     #     # 拼接文件的完整路径
-#     #     file_path = os.path.join(image_dir, file)
-#     #     # 检查文件名（转换为小写）是否以 .jpg 结尾
-#     #     if file.lower().endswith('.jpg'):
-#     #         print("-----------------------------------------------------------")
-#     #         print("正在识别：{}".format(file))
-#     #         pad_ocr(file_path, picture_dir, unrecognized_dir)
-#
 
-# def ocr(image_dir):
-#     picture_dir = os.path.join(image_dir, 'picture')
-#     unrecognized_dir = os.path.join(image_dir, 'unrecognized')
-#     if not os.path.exists(picture_dir):
-#         os.makedirs(picture_dir)
-#     if not os.path.exists(unrecognized_dir):
-#         os.makedirs(unrecognized_dir)
-#
-#     files = os.listdir(image_dir)
-#     for file in files:
-#         file_path = os.path.join(image_dir, file)
-#         if file.lower().endswith('.jpg'):
-#             print("-----------------------------------------------------------")
-#             print("正在识别：{}".format(file))
-#             pad_ocr(file_path, picture_dir, unrecognized_dir)
-#
-#     # 创建一个新的 Word 文档
-#     doc = Document()
-#
-#     # 遍历 picture 目录中的每个子目录
-#     for foldername, subfolders, filenames in os.walk(picture_dir):
-#         if filenames:
-#             # 只处理图片文件
-#             image_files = [f for f in filenames if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
-#             if image_files:
-#                 # 在 Word 文档中插入一行
-#                 row_cells = doc.add_table(rows=1, cols=len(image_files)).rows[0].cells
-#                 for i, filename in enumerate(image_files):
-#                     image_path = os.path.join(foldername, filename)
-#
-#                     # 检查图片格式是否被支持
-#                     try:
-#                         with PILImage.open(image_path) as img:
-#                             img.verify()  # 确保图片格式正确
-#                     except (IOError, SyntaxError) as e:
-#                         print(f"警告: 无法识别图片文件 {image_path}. 错误信息: {e}")
-#                         continue
-#
-#                     # 添加图片到 Word 文档
-#                     try:
-#                         run = row_cells[i].add_paragraph().add_run()
-#                         run.add_picture(image_path, width=Inches(1.0))  # 调整图片宽度
-#                     except Exception as e:
-#                         print(f"警告: 无法将图片 {image_path} 插入到 Word 文档. 错误信息: {e}")
-#                         continue
-#
-#     # 保存 Word 文档到 picture 目录
-#     doc_path = os.path.join(picture_dir, 'output.docx')
-#     doc.save(doc_path)
-#     print(f"Word 文档已保存至：{doc_path}")
 
 def ocr(image_dir):
     picture_dir = os.path.join(image_dir, 'picture')
@@ -317,7 +248,7 @@ def ocr(image_dir):
 # 执行 OCR（光学字符识别）操作，处理图像文件，并将识别结果进行保存和分类
 def pad_ocr(file_path, picture_dir, unrecognized_dir):      #file_path：待处理图像文件的完整路径
     # 命令行调用 paddleocr 工具的命令，构建命令
-    command = ['paddleocr', '--image_dir', file_path, '--use_angle_cls', 'true', '--use_gpu', 'false']
+    command = ['paddleocr', '--image_dir', file_path, '--use_angle_cls', 'true', '--use_gpu', 'true']
     # 执行命令并捕获输出，使用 subprocess.run 执行构建的命令   capture_output=True：捕获命令的标准输出和标准错误输出    text=True：将输出处理为字符串而不是字节
     result = subprocess.run(command, capture_output=True, text=True)
 
