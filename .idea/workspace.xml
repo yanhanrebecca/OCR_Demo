@@ -4,148 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d3b9363-f2c6-4b10-876c-1674fe19db28" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewOCR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OCR_Demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OCR_Demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pad_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pad_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/+/+.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/+/36.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/0/0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/0/51.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/0/85.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/000/000.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/000/86.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/12/12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/12/52.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/12/ResultImage.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/128/128.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/128/71.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/20/20.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/20/55.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/3/3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/3/58.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/3/59.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/420/420.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/420/73.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/4200/4200.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/4200/74.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/7/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/7/64.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/7/65.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/7/7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/Ho/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/Ho/Ho.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/P/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/P/P.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/V/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/V/57.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/V/V.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/output.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/人民中/38.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/人民中/人民中.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/人民币/37.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/人民币/人民币.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/倍/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/倍/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/倍/倍.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/元/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/元/元.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/南/49.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/南/50.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/南/南.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/司/46.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/司/47.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/司/司.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/拾/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/拾/拾.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/拾贰/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/拾贰/拾贰.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/李/43.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/李/44.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/李/李.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/款肆/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/款肆/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/款肆/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/款肆/款肆.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/赵/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/赵/赵.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/赵永浩/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/picture/赵永浩/赵永浩.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/100.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/101.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/34.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/35.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/39.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/42.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/45.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/48.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/54.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/56.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/60.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/61.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/62.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/63.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/66.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/67.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/68.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/69.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/70.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/72.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/75.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/76.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/77.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/78.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/79.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/80.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/81.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/82.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/83.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/84.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/87.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/88.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/89.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/90.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/91.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/92.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/93.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/94.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/95.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/96.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/97.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/98.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/unrecognized/99.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-    </list>
+    <list default="true" id="2d3b9363-f2c6-4b10-876c-1674fe19db28" name="Changes" comment="Changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,12 +26,12 @@
     &quot;assignee&quot;: &quot;HANUrOnly&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/yanhanrebecca/OCR_Demo.git&quot;,
-    &quot;accountId&quot;: &quot;1fae8e71-59f3-44df-9a7c-4d9a5863c711&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/yanhanrebecca/OCR_Demo.git",
+    "accountId": "992b9931-80b4-4814-96e5-268ffeeb8b74"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -368,6 +227,7 @@
       <workItem from="1723432785754" duration="2671000" />
       <workItem from="1723441026498" duration="6153000" />
       <workItem from="1723452627969" duration="2505000" />
+      <workItem from="1723510797745" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -385,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723182206184</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changes">
+      <option name="closed" value="true" />
+      <created>1723511045906</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723511045907</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
