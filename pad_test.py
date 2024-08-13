@@ -187,7 +187,7 @@ def DOIT(rawPic, save_directory):
 
 
 
-def ocr(image_dir):
+def ocr(image_dir,origin_name):
     picture_dir = os.path.join(image_dir, 'picture')
     unrecognized_dir = os.path.join(image_dir, 'unrecognized')
 
@@ -202,7 +202,7 @@ def ocr(image_dir):
         if file.lower().endswith('.jpg'):
             print("-----------------------------------------------------------")
             print("正在识别：{}".format(file))
-            pad_ocr(file_path, picture_dir, unrecognized_dir)
+            pad_ocr(file_path, origin_name,picture_dir, unrecognized_dir)
 
     # 创建一个新的 Word 文档
     doc = Document()
@@ -244,9 +244,17 @@ def ocr(image_dir):
     doc.save(doc_path)
     print(f"Word 文档已保存至：{doc_path}")
 
+def get_unique_filename(directory, filename):
+    base, ext = os.path.splitext(filename)
+    counter = 1
+    new_filename = filename
+    while os.path.exists(os.path.join(directory, new_filename)):
+        new_filename = f"{base}_{counter}{ext}"
+        counter += 1
+    return new_filename
 
 # 执行 OCR（光学字符识别）操作，处理图像文件，并将识别结果进行保存和分类
-def pad_ocr(file_path, picture_dir, unrecognized_dir):      #file_path：待处理图像文件的完整路径
+def pad_ocr(file_path,origin_name, picture_dir, unrecognized_dir):  # file_path：待处理图像文件的完整路径
     # 命令行调用 paddleocr 工具的命令，构建命令
     command = ['paddleocr', '--image_dir', file_path, '--use_angle_cls', 'true', '--use_gpu', 'true']
     # 执行命令并捕获输出，使用 subprocess.run 执行构建的命令   capture_output=True：捕获命令的标准输出和标准错误输出    text=True：将输出处理为字符串而不是字节
@@ -259,18 +267,27 @@ def pad_ocr(file_path, picture_dir, unrecognized_dir):      #file_path：待处�
         if output:
             output_lines = output.splitlines()  # 将输出按行分割
             if output_lines:
-                last_line = output_lines[-1]    # 获取输出的最后一行，这通常是 OCR 识别的结果
-                word = process_log(last_line)   # 处理这行文本以提取识别出的文字
-                word = word.replace("'", "")    # 去除识别结果中的单引号（如果有的话）
+                last_line = output_lines[-1]  # 获取输出的最后一行，这通常是 OCR 识别的结果
+                word = process_log(last_line)  # 处理这行文本以提取识别出的文字
+                word = word.replace("'", "")  # 去除识别结果中的单引号（如果有的话）
                 print("{}图片是识别出的文字是{}".format(file_path, word))
                 if word:
                     word_folder = os.path.join(picture_dir, word)
                     if not os.path.exists(word_folder):
                         os.makedirs(word_folder)
+
+                    # 获取原始文件的扩展名
+                    file_ext = os.path.splitext(file_path)[1]
+                    # 构建新的文件名
+                    new_file_name = f"{origin_name}{'_'}{word}{file_ext}"
+                    new_file_name = get_unique_filename(word_folder, new_file_name)
+                    new_file_path = os.path.join(word_folder, new_file_name)
+
+                    # 重命名图片文件
+                    os.rename(file_path, new_file_path)
                     txt_path = os.path.join(word_folder, f'{word}.txt')
                     with open(txt_path, 'w') as f:
                         f.write(word)
-                    move_file(file_path, word_folder)
                 else:
                     move_file(file_path, unrecognized_dir)
             else:
@@ -334,6 +351,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-img', '--image_path', help='输入图片路径')
     args = parser.parse_args()
+    # 获取图片路径
+    image_path = args.image_path
+    # 从路径中提取文件名
+    origin_name = os.path.splitext(os.path.basename(image_path))[0]
     # 获取传入的参数值
     rawPicPath = args.image_path
     # 调用 DOIT 函数进行图片处理
@@ -343,4 +364,4 @@ if __name__ == '__main__':
     print("传入的图片路径是:", rawPicPath)
     # print(args)
     # 调用 ocr 函数进行 OCR 处理
-    ocr(image_dir)
+    ocr(image_dir,origin_name)
