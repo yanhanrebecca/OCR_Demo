@@ -6,6 +6,7 @@ import argparse
 from docx import Document
 from docx.shared import Inches
 from PIL import Image as PILImage
+import re
 
 # 初始化参数
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'     # 环境变量设置：设置 KMP_DUPLICATE_LIB_OK 可以避免程序因库冲突而崩溃
@@ -90,6 +91,7 @@ def CropImage(image, dest, boxMin, boxMax):     #dest：裁剪后图像的保存
     # 异常处理
     except Exception as e:
         print(f"处理图像时发生错误: {e}")
+
 
 def enhance_image(image):
     # 将输入的彩色图像转换为灰度图像
@@ -185,9 +187,12 @@ def DOIT(rawPic, save_directory):
     result_image_path = os.path.join(save_directory, 'ResultImage.jpg')
     cv2.imwrite(result_image_path, origineImage)
 
+def sanitize_filename(filename):
+    # 替换非法字符
+    return re.sub(r'[\/:*?"<>|]', '_', filename)
 
 
-def ocr(image_dir,origin_name):
+def ocr(image_dir, origin_name):
     picture_dir = os.path.join(image_dir, 'picture')
     unrecognized_dir = os.path.join(image_dir, 'unrecognized')
 
@@ -202,42 +207,55 @@ def ocr(image_dir,origin_name):
         if file.lower().endswith('.jpg'):
             print("-----------------------------------------------------------")
             print("正在识别：{}".format(file))
-            pad_ocr(file_path, origin_name,picture_dir, unrecognized_dir)
+            pad_ocr(file_path, origin_name, picture_dir, unrecognized_dir)
 
     # 创建一个新的 Word 文档
     doc = Document()
+    doc.add_heading('OCR 识别结果', level=1)
 
-    # 遍历 picture 目录中的每个子目录
+    # 统计每个子目录中图片的数量
+    folder_image_count = {}
     for foldername, subfolders, filenames in os.walk(picture_dir):
-        if filenames:
-            # 只处理图片文件
-            image_files = [f for f in filenames if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
-            if image_files:
-                # 在 Word 文档中插入一行
-                row_cells = doc.add_table(rows=1, cols=len(image_files)).rows[0].cells
-                for i, filename in enumerate(image_files):
-                    image_path = os.path.join(foldername, filename)
+        image_files = [f for f in filenames if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+        if image_files:
+            folder_image_count[foldername] = len(image_files)
 
-                    # 检查图片格式是否被支持
-                    try:
-                        with PILImage.open(image_path) as img:
-                            img.verify()  # 确保图片格式正确
-                    except (IOError, SyntaxError) as e:
-                        print(f"警告: 无法识别图片文件 {image_path}. 错误信息: {e}")
-                        continue
+    # 按照图片数量从多到少排序
+    sorted_folders = sorted(folder_image_count.items(), key=lambda x: x[1], reverse=True)
 
-                    # 添加图片到 Word 文档
-                    try:
-                        cell = row_cells[i]
-                        run = cell.add_paragraph().add_run()
-                        run.add_picture(image_path, width=Inches(1.0))  # 调整图片宽度
+    # 按照排序后的结果将图片插入 Word 文档
+    for foldername, _ in sorted_folders:
+        image_files = [f for f in os.listdir(foldername) if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+        if image_files:
+            # 创建表格
+            num_columns = 3  # 每行显示3张图片
+            num_rows = (len(image_files) + num_columns - 1) // num_columns
+            table = doc.add_table(rows=num_rows, cols=num_columns)
+            table.style = 'Table Grid'  # 设置表格样式
 
-                        # 添加图片说明
-                        para = cell.add_paragraph()
-                        para.add_run(f"来自 {filename}")
-                    except Exception as e:
-                        print(f"警告: 无法将图片 {image_path} 插入到 Word 文档. 错误信息: {e}")
-                        continue
+            for i, filename in enumerate(image_files):
+                image_path = os.path.join(foldername, filename)
+
+                # 检查图片格式是否被支持
+                try:
+                    with PILImage.open(image_path) as img:
+                        img.verify()  # 确保图片格式正确
+                except (IOError, SyntaxError) as e:
+                    print(f"警告: 无法识别图片文件 {image_path}. 错误信息: {e}")
+                    continue
+
+                # 添加图片到 Word 文档
+                try:
+                    cell = table.cell(i // num_columns, i % num_columns)
+                    run = cell.add_paragraph().add_run()
+                    run.add_picture(image_path, width=Inches(1.5))  # 调整图片宽度
+
+                    # 添加图片说明
+                    para = cell.add_paragraph()
+                    para.add_run(f"来自 {filename}")
+                except Exception as e:
+                    print(f"警告: 无法将图片 {image_path} 插入到 Word 文档. 错误信息: {e}")
+                    continue
 
     # 保存 Word 文档到 picture 目录
     doc_path = os.path.join(picture_dir, 'output.docx')
@@ -247,43 +265,39 @@ def ocr(image_dir,origin_name):
 def get_unique_filename(directory, filename):
     base, ext = os.path.splitext(filename)
     counter = 1
-    new_filename = filename
+    new_filename = sanitize_filename(filename)
     while os.path.exists(os.path.join(directory, new_filename)):
         new_filename = f"{base}_{counter}{ext}"
         counter += 1
+        new_filename = sanitize_filename(new_filename)
     return new_filename
 
+
 # 执行 OCR（光学字符识别）操作，处理图像文件，并将识别结果进行保存和分类
-def pad_ocr(file_path,origin_name, picture_dir, unrecognized_dir):  # file_path：待处理图像文件的完整路径
-    # 命令行调用 paddleocr 工具的命令，构建命令
+def pad_ocr(file_path, origin_name, picture_dir, unrecognized_dir):
     command = ['paddleocr', '--image_dir', file_path, '--use_angle_cls', 'true', '--use_gpu', 'true']
-    # 执行命令并捕获输出，使用 subprocess.run 执行构建的命令   capture_output=True：捕获命令的标准输出和标准错误输出    text=True：将输出处理为字符串而不是字节
     result = subprocess.run(command, capture_output=True, text=True)
 
-    # 检查命令是否成功执行
     if result.returncode == 0:
         print("识别成功。")
-        output = result.stdout  # 获取命令的标准输出
+        output = result.stdout
         if output:
-            output_lines = output.splitlines()  # 将输出按行分割
+            output_lines = output.splitlines()
             if output_lines:
-                last_line = output_lines[-1]  # 获取输出的最后一行，这通常是 OCR 识别的结果
-                word = process_log(last_line)  # 处理这行文本以提取识别出的文字
-                word = word.replace("'", "")  # 去除识别结果中的单引号（如果有的话）
+                last_line = output_lines[-1]
+                word = process_log(last_line)
+                word = word.replace("'", "")
+                word = sanitize_filename(word)  # 确保识别结果是合法的文件名
                 print("{}图片是识别出的文字是{}".format(file_path, word))
                 if word:
                     word_folder = os.path.join(picture_dir, word)
                     if not os.path.exists(word_folder):
                         os.makedirs(word_folder)
-
-                    # 获取原始文件的扩展名
                     file_ext = os.path.splitext(file_path)[1]
-                    # 构建新的文件名
-                    new_file_name = f"{origin_name}{'_'}{word}{file_ext}"
+                    new_file_name = f"{'样本'}{origin_name}{'_'}{word}{file_ext}"
                     new_file_name = get_unique_filename(word_folder, new_file_name)
                     new_file_path = os.path.join(word_folder, new_file_name)
 
-                    # 重命名图片文件
                     os.rename(file_path, new_file_path)
                     txt_path = os.path.join(word_folder, f'{word}.txt')
                     with open(txt_path, 'w') as f:
@@ -298,7 +312,6 @@ def pad_ocr(file_path,origin_name, picture_dir, unrecognized_dir):  # file_path�
             move_file(file_path, unrecognized_dir)
     else:
         print("命令执行失败。")
-        # 打印或处理命令的错误输出
         print("错误输出:")
         print(result.stderr)
         move_file(file_path, unrecognized_dir)
@@ -306,22 +319,21 @@ def pad_ocr(file_path,origin_name, picture_dir, unrecognized_dir):  # file_path�
 
 #将文件移动到指定的目标目录
 def move_file(file_path, target_dir, word=None):
-    # 处理子目录
     if word:
         target_dir = os.path.join(target_dir, word)
         if not os.path.exists(target_dir):
             os.makedirs(target_dir)
     base_name = os.path.basename(file_path)
+    base_name = sanitize_filename(base_name)
     target_path = os.path.join(target_dir, base_name)
-    # 生成新的文件名（如 name_1.ext）
     if os.path.exists(target_path):
         name, ext = os.path.splitext(base_name)
         counter = 1
         while os.path.exists(target_path):
             new_name = f"{name}_{counter}{ext}"
-            target_path = os.path.join(target_dir, new_name)
+            target_path = os.path.join(target_dir, sanitize_filename(new_name))
             counter += 1
-    os.rename(file_path, target_path)   # 将源文件从 file_path 移动到目标路径 target_path
+    os.rename(file_path, target_path)
 
 #处理字符串 log_string，从中提取特定的信息
 def process_log(log_string):
