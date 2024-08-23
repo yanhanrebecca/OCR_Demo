@@ -172,7 +172,7 @@ def DOIT(rawPic, save_directory):
     for m in range(len(Position)):
         rectMin = (Position[m][0], Position[m][1])
         rectMax = (Position[m][2], Position[m][3])
-        sizes = [(0, 0), (50, 50), (100, 100)]  # 定义三种不同的尺寸
+        sizes = [(0, 0), (HIOG*10, VIOG*10), (HIOG*20, VIOG*20)]  # 定义三种不同的尺寸
 
         for size in sizes:
             # 调整裁剪区域以确保不引入黑色边框

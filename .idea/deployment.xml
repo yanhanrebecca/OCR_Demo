@@ -2,10 +2,17 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always">
     <serverData>
-      <paths name="昇腾">
+      <paths name="TranceInsperct">
         <serverdata>
           <mappings>
-            <mapping deploy="/ORC" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@210.47.138.34:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/Trance" local="$PROJECT_DIR$" />
           </mappings>
         </serverdata>
       </paths>

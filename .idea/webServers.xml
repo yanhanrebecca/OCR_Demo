@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="3068ee6a-835f-4698-8bda-abfa5adaec22" name="昇腾">
-        <fileTransfer rootFolder="/root" accessType="SFTP" host="210.47.138.34" port="22" sshConfigId="a7e07e36-d007-4a48-abb6-f612b567d843" sshConfig="root@210.47.138.34:22 password">
+      <webServer id="76e58c64-680c-4f04-98e4-8d72ebdf2b8d" name="TranceInsperct">
+        <fileTransfer rootFolder="/home/Trance" accessType="SFTP" host="210.47.138.34" port="22" sshConfigId="86c9c6c0-166b-4aaf-99a0-2408df8f85a7" sshConfig="root@210.47.138.34:22 password">
           <advancedOptions>
             <advancedOptions controlEncoding="UTF-8" dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
