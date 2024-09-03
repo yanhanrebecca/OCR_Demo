@@ -294,7 +294,7 @@ def pad_ocr(file_path, origin_name, picture_dir, unrecognized_dir):
                     if not os.path.exists(word_folder):
                         os.makedirs(word_folder)
                     file_ext = os.path.splitext(file_path)[1]
-                    new_file_name = f"{'样本'}{origin_name}{'_'}{word}{file_ext}"
+                    new_file_name = f"{origin_name}{'_'}{word}{file_ext}"
                     new_file_name = get_unique_filename(word_folder, new_file_name)
                     new_file_path = os.path.join(word_folder, new_file_name)
 

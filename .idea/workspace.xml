@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3b9363-f2c6-4b10-876c-1674fe19db28" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COLOR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HengShu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/Test/T/样本10_人民n.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BiJi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CNN.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ti.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Four_Dimensional_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Four_Dimensional_recognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Three_Dimensional_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Three_Dimensional_recognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pad_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pad_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.COLOR.executor&quot;: &quot;Run&quot;,
     &quot;Python.Four_Dimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.HengShu.executor&quot;: &quot;Run&quot;,
     &quot;Python.NewOCR.executor&quot;: &quot;Run&quot;,
     &quot;Python.TesscatTest.executor&quot;: &quot;Run&quot;,
     &quot;Python.ThreeDimensional_recognition.executor&quot;: &quot;Run&quot;,
@@ -67,6 +74,8 @@
     &quot;Python.Ti.executor&quot;: &quot;Run&quot;,
     &quot;Python.TwoDimensional_recognition.executor&quot;: &quot;Run&quot;,
     &quot;Python.Two_Dimensional_recognition (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Two_Dimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.match.executor&quot;: &quot;Run&quot;,
     &quot;Python.new.executor&quot;: &quot;Run&quot;,
     &quot;Python.pad_test.executor&quot;: &quot;Run&quot;,
     &quot;Python.split.executor&quot;: &quot;Run&quot;,
@@ -82,7 +91,7 @@
     &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;HTZbranch&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/14602/Desktop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/ExtractionProJ/OCR_Demo/result/unrecognized&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -96,17 +105,64 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test\T" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test\V" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\ExtractionProJ\OCR_Demo" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test\T" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\data" />
-      <recent name="D:\Work\ExtractionProJ\OCR_Demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.match">
+  <component name="RunManager" selected="Python.COLOR">
+    <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OCR_Demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="COLOR" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OCR_Demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/COLOR.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Four_Dimensional_recognition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OCR_Demo" />
       <option name="ENV_FILES" value="" />
@@ -130,7 +186,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Three_Dimensional_recognition (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="HengShu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OCR_Demo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,7 +200,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Three_Dimensional_recognition.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HengShu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,30 +209,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Ti" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="OCR_Demo" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ti.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Two_Dimensional_recognition (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Two_Dimensional_recognition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OCR_Demo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,36 +232,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="match" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="OCR_Demo" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/match.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.match" />
+        <item itemvalue="Python.COLOR" />
+        <item itemvalue="Python.HengShu" />
+        <item itemvalue="Python.Two_Dimensional_recognition" />
+        <item itemvalue="Python.1" />
         <item itemvalue="Python.Four_Dimensional_recognition" />
-        <item itemvalue="Python.Ti" />
-        <item itemvalue="Python.Three_Dimensional_recognition (1)" />
-        <item itemvalue="Python.Two_Dimensional_recognition (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +281,22 @@
       <workItem from="1724202045414" duration="6921000" />
       <workItem from="1724210906030" duration="7829000" />
       <workItem from="1724288563866" duration="6693000" />
-      <workItem from="1724375870481" duration="9099000" />
+      <workItem from="1724375870481" duration="13355000" />
+      <workItem from="1724411820784" duration="333000" />
+      <workItem from="1724466456813" duration="57000" />
+      <workItem from="1724467713945" duration="873000" />
+      <workItem from="1724633829416" duration="9889000" />
+      <workItem from="1724652366434" duration="7396000" />
+      <workItem from="1724674384849" duration="65000" />
+      <workItem from="1724743886109" duration="1546000" />
+      <workItem from="1724745753695" duration="92000" />
+      <workItem from="1724746032229" duration="2947000" />
+      <workItem from="1724758362555" duration="172000" />
+      <workItem from="1724806829014" duration="12217000" />
+      <workItem from="1724844870863" duration="3070000" />
+      <workItem from="1724903650886" duration="11000" />
+      <workItem from="1725239084944" duration="17685000" />
+      <workItem from="1725325294927" duration="338000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -329,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724378175328</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changes">
+      <option name="closed" value="true" />
+      <created>1724399716789</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1724399716789</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,14 +385,20 @@
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pad_test_py$pad_test.coverage" NAME="pad_test 覆盖结果" MODIFIED="1723515774185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Ti.coverage" NAME="Ti 覆盖结果" MODIFIED="1723982210628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$test.coverage" NAME="test 覆盖结果" MODIFIED="1723626519903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Three_Dimensional_recognition__1_.coverage" NAME="Three_Dimensional_recognition (1) 覆盖结果" MODIFIED="1723791481935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$match.coverage" NAME="match 覆盖结果" MODIFIED="1724636266838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Three_Dimensional_recognition__1_.coverage" NAME="Three_Dimensional_recognition (1) 覆盖结果" MODIFIED="1724640420183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$tt.coverage" NAME="tt 覆盖结果" MODIFIED="1723607800575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$ThreeDimensional_recognition.coverage" NAME="ThreeDimensional_recognition 覆盖结果" MODIFIED="1723690026766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$TwoDimensional_recognition.coverage" NAME="TwoDimensional_recognition 覆盖结果" MODIFIED="1723689710070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Four_Dimensional_recognition.coverage" NAME="Four_Dimensional_recognition 覆盖结果" MODIFIED="1724380330037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Four_Dimensional_recognition.coverage" NAME="Four_Dimensional_recognition 覆盖结果" MODIFIED="1724656801553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$Two_Dimensional_recognition__1_.coverage" NAME="Two_Dimensional_recognition (1) 覆盖结果" MODIFIED="1723788185338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$COLOR.coverage" NAME="COLOR 覆盖结果" MODIFIED="1725265630471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$new.coverage" NAME="new 覆盖结果" MODIFIED="1724653372469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$pad_test.coverage" NAME="pad_test 覆盖结果" MODIFIED="1723515774185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Ti.coverage" NAME="Ti 覆盖结果" MODIFIED="1723982210628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Two_Dimensional_recognition.coverage" NAME="Two_Dimensional_recognition 覆盖结果" MODIFIED="1725247092565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$HengShu.coverage" NAME="HengShu 覆盖结果" MODIFIED="1725261121153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$TwoDimensional_recognition.coverage" NAME="TwoDimensional_recognition 覆盖结果" MODIFIED="1723689710070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$1.coverage" NAME="1 覆盖结果" MODIFIED="1724847296349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

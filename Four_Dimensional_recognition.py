@@ -1,3 +1,4 @@
+import os
 from PIL import Image
 import cv2
 import numpy as np
@@ -101,7 +102,18 @@ def annotate_and_plot_image(image_path, threshold_distance=50, save_path=None, f
     except Exception as e:
         print(f"An error occurred: {e}")
 
+def process_images_in_folder(folder_path, output_folder, threshold_distance=50, font_size=12):
+    # Ensure output folder exists
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    for filename in os.listdir(folder_path):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            image_path = os.path.join(folder_path, filename)
+            save_path = os.path.join(output_folder, f"{os.path.splitext(filename)[0]}_annotated.jpg")
+            annotate_and_plot_image(image_path, threshold_distance, save_path, font_size)
+
 # Usage example
-image_path = '8.jpg'
-save_path = '8_annotated.jpg'
-annotate_and_plot_image(image_path, threshold_distance=50, save_path=save_path, font_size=14)
+folder_path = './result/Test/T'
+output_folder = './result'
+process_images_in_folder(folder_path, output_folder, threshold_distance=50, font_size=14)

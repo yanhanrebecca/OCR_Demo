@@ -9,7 +9,6 @@ def read(base_folder):
     image_files = []
     for folder_name in os.listdir(base_folder):
         folder_path = os.path.join(base_folder, folder_name)
-
         if os.path.isdir(folder_path):
             print(f"处理文件夹: {folder_name}")
             image_files.extend(glob.glob(os.path.join(folder_path, '*.jpg')))
@@ -22,8 +21,6 @@ color_thickness = (0, 255, 0)  # 绿色表示笔画粗细
 color_depth = (255, 0, 0)      # 红色表示笔画深浅
 color_std_dev = (0, 0, 255)    # 蓝色表示灰度变化
 contour_color = (255, 255, 0)  # 黄色用于画轮廓
-
-
 
 image_files = read(base_folder)
 for image_file in image_files:
@@ -66,19 +63,18 @@ for image_file in image_files:
         center_x, center_y = x + w // 2, y + h // 2
 
         # 标注笔画粗细（绿色）
-        img_draw.text((center_x, center_y - 30), f'Thickness: {thickness}', fill=color_thickness, font=font)
+        img_draw.text((center_x, center_y - 30), f'粗细: {thickness}', fill=color_thickness, font=font)
 
-        # 标注笔画深浅（灰度）
-        img_draw.text((center_x, center_y), f'Depth: {depth:.2f}', fill=128, font=font)
+        # 标注笔画深浅（红色）
+        img_draw.text((center_x, center_y), f'深度: {depth:.2f}', fill=color_depth, font=font)
 
-        # 标注灰度变化（灰度）
-        img_draw.text((center_x, center_y + 30), f'Std Dev: {std_dev:.2f}', fill=128, font=font)
+        # 标注灰度变化（蓝色）
+        img_draw.text((center_x, center_y + 30), f'灰度变化: {std_dev:.2f}', fill=color_std_dev, font=font)
 
-        # 画轮廓（灰度）
-        contour_points = [(pt[0][0], pt[0][1]) for pt in contour]
-        img_draw.line(contour_points, fill=255, width=2)
+        # 画轮廓（黄色）
+        cv2.drawContours(gray_np, [contour], -1, contour_color, 2)
 
     # 显示标注后的图片
-    plt.imshow(img, cmap='gray')
+    plt.imshow(img)
     plt.axis('off')
     plt.show()
