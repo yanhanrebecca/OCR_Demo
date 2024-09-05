@@ -14,7 +14,7 @@ def read(base_folder):
             image_files.extend(glob.glob(os.path.join(folder_path, '*.jpg')))
     return image_files
 
-base_folder = r'D:\Work\ExtractionProJ\OCR_Demo\result\Test'
+base_folder = r'./result\Test'
 # 读取图片并转换为灰度图
 
 color_thickness = (0, 255, 0)  # 绿色表示笔画粗细

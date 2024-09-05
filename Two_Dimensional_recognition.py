@@ -115,7 +115,7 @@ def process_image(image_file, font_path):
 
 # 主函数
 def main():
-    base_folder = r'D:\Work\ExtractionProJ\OCR_Demo\result\Test'
+    base_folder = r'./result\Test'
     font_path = r'D:\Download\SimHei.ttf'  # 替换为你的字体文件路径
     image_files = read(base_folder)
     for image_file in image_files:
