@@ -31,6 +31,7 @@ def manual_align(base_image, image_to_align):
     global dragging, ix, iy, tx, ty
     tx, ty = 0, 0  # 重置平移量
     scale_x, scale_y = 1.0, 1.0  # 初始化水平和垂直缩放比例
+    angle = 0  # 初始化旋转角度
 
     def on_mouse(event, x, y, flags, param):
         global dragging, ix, iy, tx, ty
@@ -45,15 +46,27 @@ def manual_align(base_image, image_to_align):
         elif event == cv2.EVENT_LBUTTONUP:
             dragging = False
 
-    cv2.namedWindow('Align')
+    # 创建并调整窗口大小
+    cv2.namedWindow('Align', cv2.WINDOW_NORMAL)
+    cv2.resizeWindow('Align', 800, 800)  # 设置窗口尺寸为 800x800
     cv2.setMouseCallback('Align', on_mouse)
 
     while True:
         combined_image = base_image.copy()
         rows, cols = image_to_align.shape
-        # 调整大小和平移
+
+        # 创建旋转矩阵
+        center = (cols // 2, rows // 2)
+        rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)  # 旋转角度 angle
+
+        # 应用旋转变换到图像
+        rotated_image = cv2.warpAffine(image_to_align, rotation_matrix, (cols, rows))
+
+        # 应用平移和缩放
         M = np.float32([[scale_x, 0, tx], [0, scale_y, ty]])
-        moved_image = cv2.warpAffine(image_to_align, M, (cols, rows))
+        moved_image = cv2.warpAffine(rotated_image, M, (cols, rows))
+
+        # 显示组合后的图像
         combined_image = cv2.addWeighted(combined_image, 0.5, moved_image, 0.5, 0)
         cv2.imshow('Align', combined_image)
 
@@ -68,21 +81,28 @@ def manual_align(base_image, image_to_align):
             scale_x = max(0.01, scale_x - 0.01)
         elif key == ord('d'):  # 按 'd' 键增加水平方向的缩放比例
             scale_x += 0.01
+        elif key == ord('e'):  # 按 'e' 键顺时针旋转
+            angle += 1
+        elif key == ord('r'):  # 按 'r' 键逆时针旋转
+            angle -= 1
 
     cv2.destroyAllWindows()
     return moved_image
-
-
 
 
 def generate_heatmap(image_list, mode='original'):
     base_image = preprocess_image(resize_image(image_list[0], (500, 500)))
     heatmap = np.zeros_like(base_image, dtype=np.float32)
 
+    # 设置初始对齐基准为处理后的第一张图片
+    current_base_image = base_image
+
     for img in image_list:
         preprocessed_img = preprocess_image(resize_image(img, (500, 500)))
         if mode == 'manual':
-            aligned_image = manual_align(base_image, preprocessed_img)
+            # 将当前图片与已经对齐好的基准图片对齐
+            aligned_image = manual_align(current_base_image, preprocessed_img)
+            current_base_image = aligned_image  # 将对齐后的图片作为下一张图片的基准
         else:
             aligned_image = preprocessed_img
         heatmap += aligned_image.astype(np.float32)

@@ -368,7 +368,7 @@ if __name__ == '__main__':
     # 从路径中提取文件名
     origin_name = os.path.splitext(os.path.basename(image_path))[0]
     # 获取传入的参数值
-    rawPicPath = args.image_path
+    rawPicPath = args.image_path.encode('utf-8').decode('utf-8')
     # 调用 DOIT 函数进行图片处理
     DOIT(rawPicPath, save_directory)
     print("图片处理完毕")

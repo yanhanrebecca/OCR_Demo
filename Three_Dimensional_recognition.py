@@ -65,6 +65,7 @@ for image_file in image_files:
         # 标注笔画粗细（绿色）
         img_draw.text((center_x, center_y - 30), f'粗细: {thickness}', fill=color_thickness, font=font)
 
+
         # 标注笔画深浅（红色）
         img_draw.text((center_x, center_y), f'深度: {depth:.2f}', fill=color_depth, font=font)
 
