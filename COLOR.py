@@ -13,8 +13,8 @@ image_files = [f for f in os.listdir(folder_path) if f.endswith(('jpg', 'jpeg', 
 
 # 定义不同的颜色
 color_dict = {
-    '检材': (0, 255, 0),  # 绿色
-    '样本': (0, 0, 255)  # 红色
+    'jiancai': (0, 255, 0),  # 绿色
+    'yangben': (0, 0, 255)  # 红色
 }
 
 # 轮廓线条宽度

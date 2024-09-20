@@ -102,11 +102,18 @@ def annotate_and_plot_image(image_path, threshold_distance=50, save_path=None, f
     except Exception as e:
         print(f"An error occurred: {e}")
 
-def process_images_in_folder(folder_path, output_folder, threshold_distance=50, font_size=12):
-    # Ensure output folder exists
+def process_images_in_folder(folder_path, base_output_folder='./result/fourDimension', threshold_distance=50, font_size=12):
+    # Get the folder name being processed to create a subfolder for output
+    folder_name = os.path.basename(folder_path)
+
+    # Create the output path based on the folder name
+    output_folder = os.path.join(base_output_folder, folder_name)
+
+    # Ensure the output folder exists
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
+    # Process each image in the folder
     for filename in os.listdir(folder_path):
         if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             image_path = os.path.join(folder_path, filename)
@@ -115,5 +122,5 @@ def process_images_in_folder(folder_path, output_folder, threshold_distance=50, 
 
 # Usage example
 folder_path = './result/Test/T'
-output_folder = './result'
-process_images_in_folder(folder_path, output_folder, threshold_distance=50, font_size=14)
+base_output_folder = './result/fourDimension'
+process_images_in_folder(folder_path, base_output_folder, threshold_distance=50, font_size=14)

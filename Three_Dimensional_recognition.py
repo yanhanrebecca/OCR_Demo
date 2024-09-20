@@ -5,24 +5,34 @@ import matplotlib.pyplot as plt
 import os
 import glob
 
-def read(base_folder):
-    image_files = []
-    for folder_name in os.listdir(base_folder):
-        folder_path = os.path.join(base_folder, folder_name)
-        if os.path.isdir(folder_path):
-            print(f"处理文件夹: {folder_name}")
-            image_files.extend(glob.glob(os.path.join(folder_path, '*.jpg')))
+# 函数读取指定文件夹中的图片
+def read(folder):
+    # 只读取当前文件夹下的所有jpg图片
+    image_files = glob.glob(os.path.join(folder, '*.jpg'))
     return image_files
 
-base_folder = r'./result\Test'
-# 读取图片并转换为灰度图
+# 指定文件夹路径
+base_folder = r'./result/Test/T'
+output_folder = r'./result/threeDimension'  # 输出文件夹
 
+# 如果输出文件夹不存在，则创建
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+
+# 颜色定义
 color_thickness = (0, 255, 0)  # 绿色表示笔画粗细
 color_depth = (255, 0, 0)      # 红色表示笔画深浅
 color_std_dev = (0, 0, 255)    # 蓝色表示灰度变化
 contour_color = (255, 255, 0)  # 黄色用于画轮廓
 
+# 读取图片列表
 image_files = read(base_folder)
+
+# 创建处理结果存放的文件夹（与输入文件夹同名）
+output_subfolder = os.path.join(output_folder, os.path.basename(base_folder))
+if not os.path.exists(output_subfolder):
+    os.makedirs(output_subfolder)
+
 for image_file in image_files:
     img = Image.open(image_file).convert('RGB')
     gray = img.convert('L')  # 转换为灰度图
@@ -65,7 +75,6 @@ for image_file in image_files:
         # 标注笔画粗细（绿色）
         img_draw.text((center_x, center_y - 30), f'粗细: {thickness}', fill=color_thickness, font=font)
 
-
         # 标注笔画深浅（红色）
         img_draw.text((center_x, center_y), f'深度: {depth:.2f}', fill=color_depth, font=font)
 
@@ -74,6 +83,13 @@ for image_file in image_files:
 
         # 画轮廓（黄色）
         cv2.drawContours(gray_np, [contour], -1, contour_color, 2)
+
+    # 获取图片文件名
+    file_name = os.path.basename(image_file)
+
+    # 保存处理后的图片到统一的输出子文件夹中
+    output_path = os.path.join(output_subfolder, file_name)
+    img.save(output_path)
 
     # 显示标注后的图片
     plt.imshow(img)

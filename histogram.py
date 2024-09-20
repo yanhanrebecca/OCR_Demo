@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from skimage import feature
 from matplotlib import font_manager
+
 def load_images_from_folder(folder):
     images = []
     for filename in os.listdir(folder):
@@ -41,7 +42,7 @@ def compute_image_statistics(images):
 
     return means, stds, edge_densities, mean_all, std_all, std_edge_density_all
 
-def plot_results(images, means, stds, edge_densities, mean_all, std_all, std_edge_density_all):
+def plot_results(images, means, stds, edge_densities, mean_all, std_all, std_edge_density_all, output_folder):
     # 配置中文字体
     font_path = r'D:\Download\SimHei.ttf'  # 确保字体路径正确
     font_prop = font_manager.FontProperties(fname=font_path)
@@ -83,11 +84,25 @@ def plot_results(images, means, stds, edge_densities, mean_all, std_all, std_edg
     axs[1, 2].text(0.5, -0.15, '图6: 边缘密度标准差差异', horizontalalignment='center', verticalalignment='center', fontsize=12, transform=axs[1, 2].transAxes)
 
     plt.tight_layout()
-    plt.show()
+
+    # Save the plot to the designated folder
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    plot_save_path = os.path.join(output_folder, 'image_statistics_plot.png')
+    plt.savefig(plot_save_path)
+    plt.close()
+
+    print(f"Plot saved to {plot_save_path}")
 
 # 使用示例
 folder = './result/Test/T'
+folder_name = os.path.basename(folder)
+output_folder = os.path.join('./result/histogram', folder_name)  # Save plots in './result/histogram/处理文件夹名字'
+
+# Load images and compute statistics
 images = load_images_from_folder(folder)
 means, stds, edge_densities, mean_all, std_all, std_edge_density_all = compute_image_statistics(images)
-plot_results(images, means, stds, edge_densities, mean_all, std_all, std_edge_density_all)
 
+# Plot and save results
+plot_results(images, means, stds, edge_densities, mean_all, std_all, std_edge_density_all, output_folder)

@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3b9363-f2c6-4b10-876c-1674fe19db28" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/ChongDie.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/Test/V/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/Test/V/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/Test/T/Ren_ZhangSan.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/样本.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BiDdui.py" beforeDir="false" afterPath="$PROJECT_DIR$/BiDdui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COLOR.py" beforeDir="false" afterPath="$PROJECT_DIR$/COLOR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChongDie.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChongDie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Four_Dimensional_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Four_Dimensional_recognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HengShu.py" beforeDir="false" afterPath="$PROJECT_DIR$/HengShu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Small.py" beforeDir="false" afterPath="$PROJECT_DIR$/Small.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Three_Dimensional_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Three_Dimensional_recognition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pad_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pad_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/result/Test/V/1_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Two_Dimensional_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Two_Dimensional_recognition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/histogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/histogram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/Test/T/n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/Test/T/v.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/result/Test/T/REN_LiSi.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,58 +65,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1.executor": "Run",
-    "Python.BiDdui.executor": "Run",
-    "Python.COLOR.executor": "Run",
-    "Python.ChongDie.executor": "Debug",
-    "Python.Four_Dimensional_recognition.executor": "Run",
-    "Python.HengShu.executor": "Run",
-    "Python.NewOCR.executor": "Run",
-    "Python.Small.executor": "Run",
-    "Python.TesscatTest.executor": "Run",
-    "Python.ThreeDimensional_recognition.executor": "Run",
-    "Python.Three_Dimensional_recognition (1).executor": "Run",
-    "Python.Three_Dimensional_recognition.executor": "Run",
-    "Python.Ti.executor": "Run",
-    "Python.TwoDimensional_recognition.executor": "Run",
-    "Python.Two_Dimensional_recognition (1).executor": "Run",
-    "Python.Two_Dimensional_recognition.executor": "Run",
-    "Python.WriteTrance.executor": "Run",
-    "Python.histogram.executor": "Run",
-    "Python.match.executor": "Run",
-    "Python.new.executor": "Run",
-    "Python.pad_test.executor": "Run",
-    "Python.split.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test2.executor": "Run",
-    "Python.test3.executor": "Debug",
-    "Python.tt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "HTZbranch",
-    "last_opened_file_path": "D:/Work/ExtractionProJ/OCR_Demo/result/Test/V",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BiDdui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.COLOR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ChongDie.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Four_Dimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.HengShu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.NewOCR.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Small.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TesscatTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ThreeDimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Three_Dimensional_recognition (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Three_Dimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ti.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TwoDimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Two_Dimensional_recognition (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Two_Dimensional_recognition.executor&quot;: &quot;Run&quot;,
+    &quot;Python.WriteTrance.executor&quot;: &quot;Run&quot;,
+    &quot;Python.histogram.executor&quot;: &quot;Run&quot;,
+    &quot;Python.match.executor&quot;: &quot;Run&quot;,
+    &quot;Python.new.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pad_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.split.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test3.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.tt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;HTZbranch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/ExtractionProJ/OCR_Demo/result/Test/T&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test\V" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test\T" />
+      <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test\V" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo" />
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\result\Test" />
     </key>
@@ -122,7 +126,22 @@
       <recent name="D:\Work\ExtractionProJ\OCR_Demo\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.BiDdui">
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Grunt" flag="true" />
+      <visibility group="Gulp" flag="true" />
+      <visibility group="HTTP 请求" flag="true" />
+      <visibility group="Node.js" flag="true" />
+      <visibility group="npm" flag="true" />
+      <visibility group="yarn" flag="true" />
+      <visibility group="最近的项目" flag="true" />
+      <visibility group="运行 Python 文件" flag="true" />
+      <visibility group="运行 conda 命令" flag="true" />
+      <visibility group="运行 pip 命令" flag="true" />
+      <visibility group="运行配置" flag="true" />
+    </myKeys>
+  </component>
+  <component name="RunManager" selected="Python.ChongDie">
     <configuration name="BiDdui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OCR_Demo" />
       <option name="ENV_FILES" value="" />
@@ -138,6 +157,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BiDdui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="COLOR" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="OCR_Demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/COLOR.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,7 +211,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Small" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="HengShu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OCR_Demo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,7 +225,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Small.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HengShu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -192,7 +234,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="WriteTrance" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="histogram" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="OCR_Demo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,30 +248,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WriteTrance.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pad_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="OCR_Demo" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pad_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/histogram.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,11 +259,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.BiDdui" />
         <item itemvalue="Python.ChongDie" />
-        <item itemvalue="Python.pad_test" />
-        <item itemvalue="Python.Small" />
-        <item itemvalue="Python.WriteTrance" />
+        <item itemvalue="Python.COLOR" />
+        <item itemvalue="Python.BiDdui" />
+        <item itemvalue="Python.HengShu" />
+        <item itemvalue="Python.histogram" />
       </list>
     </recent_temporary>
   </component>
@@ -307,7 +326,17 @@
       <workItem from="1725498047011" duration="20558000" />
       <workItem from="1725584584721" duration="14231000" />
       <workItem from="1725843937657" duration="19789000" />
-      <workItem from="1725929968072" duration="14030000" />
+      <workItem from="1725929968072" duration="18176000" />
+      <workItem from="1726016515341" duration="19965000" />
+      <workItem from="1726103263934" duration="17559000" />
+      <workItem from="1726189802603" duration="6722000" />
+      <workItem from="1726238406080" duration="38000" />
+      <workItem from="1726276108565" duration="9235000" />
+      <workItem from="1726621334030" duration="12001000" />
+      <workItem from="1726707963783" duration="6213000" />
+      <workItem from="1726795585869" duration="81000" />
+      <workItem from="1726797283527" duration="5003000" />
+      <workItem from="1726802608671" duration="1722000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <option name="closed" value="true" />
@@ -397,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725850058861</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changes">
+      <option name="closed" value="true" />
+      <created>1725950917965</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1725950917965</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,21 +462,21 @@
     <SUITE FILE_PATH="coverage/pad_test_py$Three_Dimensional_recognition__1_.coverage" NAME="Three_Dimensional_recognition (1) 覆盖结果" MODIFIED="1724640420183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$tt.coverage" NAME="tt 覆盖结果" MODIFIED="1723607800575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$ThreeDimensional_recognition.coverage" NAME="ThreeDimensional_recognition 覆盖结果" MODIFIED="1723690026766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Four_Dimensional_recognition.coverage" NAME="Four_Dimensional_recognition 覆盖结果" MODIFIED="1725325696178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$BiDdui.coverage" NAME="BiDdui 覆盖结果" MODIFIED="1725950009680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Four_Dimensional_recognition.coverage" NAME="Four_Dimensional_recognition 覆盖结果" MODIFIED="1726801849298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$BiDdui.coverage" NAME="BiDdui 覆盖结果" MODIFIED="1726803615666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$Two_Dimensional_recognition__1_.coverage" NAME="Two_Dimensional_recognition (1) 覆盖结果" MODIFIED="1723788185338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Small.coverage" NAME="Small 覆盖结果" MODIFIED="1725868488197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$COLOR.coverage" NAME="COLOR 覆盖结果" MODIFIED="1725854370360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Small.coverage" NAME="Small 覆盖结果" MODIFIED="1726043933129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$COLOR.coverage" NAME="COLOR 覆盖结果" MODIFIED="1726803648594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$new.coverage" NAME="new 覆盖结果" MODIFIED="1724653372469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$ChongDie.coverage" NAME="ChongDie 覆盖结果" MODIFIED="1725939167769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$ChongDie.coverage" NAME="ChongDie 覆盖结果" MODIFIED="1726803917085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$pad_test.coverage" NAME="pad_test 覆盖结果" MODIFIED="1725939108656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$Ti.coverage" NAME="Ti 覆盖结果" MODIFIED="1723982210628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Two_Dimensional_recognition.coverage" NAME="Two_Dimensional_recognition 覆盖结果" MODIFIED="1725504221948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$HengShu.coverage" NAME="HengShu 覆盖结果" MODIFIED="1725854260151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Two_Dimensional_recognition.coverage" NAME="Two_Dimensional_recognition 覆盖结果" MODIFIED="1726800826944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$HengShu.coverage" NAME="HengShu 覆盖结果" MODIFIED="1726803226676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$TwoDimensional_recognition.coverage" NAME="TwoDimensional_recognition 覆盖结果" MODIFIED="1723689710070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$WriteTrance.coverage" NAME="WriteTrance 覆盖结果" MODIFIED="1725866903949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$Three_Dimensional_recognition.coverage" NAME="Three_Dimensional_recognition 覆盖结果" MODIFIED="1725344349239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pad_test_py$histogram.coverage" NAME="histogram 覆盖结果" MODIFIED="1725854244811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$Three_Dimensional_recognition.coverage" NAME="Three_Dimensional_recognition 覆盖结果" MODIFIED="1726801639104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pad_test_py$histogram.coverage" NAME="histogram 覆盖结果" MODIFIED="1726802094453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pad_test_py$1.coverage" NAME="1 覆盖结果" MODIFIED="1724847296349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

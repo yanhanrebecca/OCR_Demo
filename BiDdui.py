@@ -8,6 +8,7 @@ dragging = False
 ix, iy = -1, -1
 tx, ty = 0, 0
 
+
 def load_images_from_folder(folder):
     images = []
     for filename in os.listdir(folder):
@@ -19,13 +20,16 @@ def load_images_from_folder(folder):
             print(f"Warning: Cannot read image {img_path}")
     return images
 
+
 def preprocess_image(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     _, binary = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY_INV)
     return binary
 
+
 def resize_image(image, size):
     return cv2.resize(image, size, interpolation=cv2.INTER_AREA)
+
 
 def manual_align(base_image, image_to_align):
     global dragging, ix, iy, tx, ty
@@ -111,10 +115,23 @@ def generate_heatmap(image_list, mode='original'):
     heatmap = (heatmap / heatmap.max() * 255).astype(np.uint8)
     return heatmap
 
+
+def save_heatmap(heatmap, output_folder):
+    # Create the output folder if it doesn't exist
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    # Define the output path and save the heatmap image
+    output_path = os.path.join(output_folder, 'heatmap.png')
+    cv2.imwrite(output_path, heatmap)
+    print(f"Heatmap saved at {output_path}")
+
+
 def display_heatmap(heatmap):
     plt.imshow(heatmap, cmap='hot', interpolation='nearest')
     plt.colorbar()
     plt.show()
+
 
 # 示例使用
 folder_path = './result/Test/T'
@@ -122,6 +139,12 @@ folder_path = './result/Test/T'
 images = load_images_from_folder(folder_path)
 if images:
     heatmap = generate_heatmap(images, mode='manual')  # 可以选择 'original' 或 'manual'
-    display_heatmap(heatmap)
+
+    # Define the output folder path as ./result/processed_文件夹名字
+    folder_name = os.path.basename(folder_path)  # 获取被处理文件夹的名字
+    output_folder = f'./result/heat/{folder_name}'
+
+    save_heatmap(heatmap, output_folder)  # 保存热力图
+    display_heatmap(heatmap)  # 显示热力图
 else:
     print("No images found in the specified folder.")

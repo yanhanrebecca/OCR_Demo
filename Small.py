@@ -121,7 +121,7 @@ class ImageViewer:
 
         # 更新 Canvas 的滚动区域以适应新的图片大小
         self.canvas.config(scrollregion=self.canvas.bbox(tk.ALL))
-
+        
     def show_next_image(self):
         # 显示下一张图片
         if self.image_paths and self.current_index < len(self.image_paths) - 1:
