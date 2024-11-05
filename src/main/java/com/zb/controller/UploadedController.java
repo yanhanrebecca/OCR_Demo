@@ -95,9 +95,9 @@ public class UploadedController {
             return ResultBuilder.faile(ResultCode.USER_NULL_PICTURE_ERROR);
         }
         if(uploadCounts.get(caseId)==null){
-            flag = "_jc";
+            flag = "";
         }else{
-            flag = "_yb";
+            flag = "";
         }
         String fileName = file.getOriginalFilename();
         int dotIndex1 = fileName.lastIndexOf('.');
@@ -157,7 +157,7 @@ public class UploadedController {
                 cropTool.CropToDB(fileName, caseId, uploadedService, cropService, casefileService);
                 list.add(uploadedId);//第二张图片的 uploadedId
                 // 重置计数
-                uploadCounts.clear();
+                uploadCounts.put(caseId, 0);
             }
 
         } catch (Exception e) {

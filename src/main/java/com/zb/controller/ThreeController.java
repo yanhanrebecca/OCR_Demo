@@ -1,7 +1,6 @@
 package com.zb.controller;
 
 import com.zb.Result.ResultBuilder;
-import com.zb.service.BaseService;
 import com.zb.service.CasefileService;
 import com.zb.service.ThreeService;
 import com.zb.service.UploadedService;
@@ -9,15 +8,11 @@ import com.zb.tools.*;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
